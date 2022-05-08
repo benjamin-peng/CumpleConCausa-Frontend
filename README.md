@@ -6,3 +6,4 @@ Code for the Technify 2022 project Cumple Con Causa
 - Benjamin Peng - Developer
 - Colin Wu - Developer
 - Piyush Maheshwari - Developer
+- Islina Shan - Developer
