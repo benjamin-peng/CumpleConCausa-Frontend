@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HTML 5 Boilerplate</title>
+    </head>
+    <body>
+        <form method="post" id="form1">
+            <p>what age are you?</p>
+            <input type="radio" id="young" name="age" value="young">
+            <label for="young">young</label><br>
+            <input type="radio" id="mid-age" name="age" value="mid-age">
+            <label for="mid-age">middle aged</label><br>
+            <input type="radio" id="old" name="age" value="old">
+            <label for="old">old</label><br>
+            
+            <p>what do you want to do?</p>
+            <input type="radio" id="funds" name="action" value="funds">
+            <label for="funds">raise funds</label><br>
+            <input type="radio" id="volunteer" name="action" value="volunteer">
+            <label for="volunteer">volunteer</label><br>
+            
+        </form> 
+        <button id="btn" onclick="submit()">submit</button>
+
+        <script>
+            function submit() {
+                form1.submit();
+            }
+        </script>
+    </body>
+</html>
