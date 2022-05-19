@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Fira Sans";
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1 {
+  color: #28b0bf;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #28b0bf;
+}
+.content {
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 10px;
+}
+.home {
+  text-align: left;
+}
+.home h3 {
+  padding-bottom: 10px;
+}
+.home h4 {
+  padding-bottom: 10px;
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.container {
+  flex: 1;
+}
+img {
+  width: 100%;
+}
+.bottom {
+  border-top: 1px solid #f2f2f2;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+}
+.bottom p {
+  color: rgb(144, 138, 138);
 }
