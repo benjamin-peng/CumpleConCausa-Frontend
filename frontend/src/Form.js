@@ -15,7 +15,7 @@ const Form = () => {
                 <label>Email Address</label>
                 <input type="text" required />
             </form>
-            <NextButton dest="/form2"></NextButton>
+            <NextButton dest="/form/video"></NextButton>
         </div>
     );
 }

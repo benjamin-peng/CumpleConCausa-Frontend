@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import About from './About';
 import Form from './Form';
+import VideoOne from './VideoOne';
 import Bottom from './Bottom';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
@@ -16,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
-            <Route path="/form" element={<Form />}></Route>
+            <Route path="/register/video" element={<VideoOne />}></Route>
           </Routes>
         </div>
         <Bottom />
