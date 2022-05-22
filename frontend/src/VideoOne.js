@@ -1,6 +1,8 @@
 import NextButton from './NextButton';
+import { useNavigate } from "react-router-dom";
 
 const VideoOne = () => {
+    const navigate = useNavigate();
     return (  
         <div className="form">
             <h3>Glad to have you on board!</h3>
@@ -8,14 +10,16 @@ const VideoOne = () => {
             <div className="video">
                 <iframe
                     src="https://www.youtube.com/embed/E7wJTI-1dvQ"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="autoplay; encrypted-media"
-                    allowfullscreen
+                    allowFullScreen
                     title="video"
                 />
             </div>
             <div className="nextButton">
-                <NextButton dest="/register/video"></NextButton>
+                <NextButton handleClick={() => {
+                    navigate('/register/form');
+                }}></NextButton>
             </div>
         </div>
     );

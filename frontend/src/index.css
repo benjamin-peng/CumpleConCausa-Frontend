@@ -80,7 +80,7 @@ img {
 }
 .form button {
   width: 100%;
-  background: #f1356d;
+  background: #28b0bf;
   color: #fff;
   border: 0;
   padding: 8px;
@@ -101,6 +101,6 @@ iframe {
 }
 .nextButton {
   margin: auto;
-  width: 70px;
+  width: 70px;  
   padding: 10px;
 }

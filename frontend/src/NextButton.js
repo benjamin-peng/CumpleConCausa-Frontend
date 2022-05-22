@@ -1,12 +1,10 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
-const NextButton = ({dest}) => {
+const NextButton = ({handleClick}) => {
 
     return (  
         <div className="nextButton">
-            <a href={dest}>
-                <button>Next</button>
-            </a>
+            <button onClick={handleClick}>Next</button>
         </div>
     );
 }
