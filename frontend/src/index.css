@@ -104,3 +104,9 @@ iframe {
   width: 70px;  
   padding: 10px;
 }
+
+.text-danger {
+  padding-bottom: 10px;
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+}
