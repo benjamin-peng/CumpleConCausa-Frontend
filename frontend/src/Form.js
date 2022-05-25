@@ -3,34 +3,33 @@ import { useState, useEffect } from 'react';
 import validator from 'validator';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
+import { useNavigate } from "react-router-dom";
 
-const Form = () => {
+const Form = ({setUserData}) => {
+    const navigate = useNavigate();
+
     const [fName, setfName] = useState(''); 
     const [lName, setlName] = useState(''); 
     const [number, setNumber] = useState(''); 
     const [address, setAddress] = useState('');
     const [errors, setErrors] = useState(['']);
 
-    var phoneIsValid = true;
-
-    //useEffect(() => {
-        //phoneIsValid = true;
-    //});
-    
-    const handleClick = (e) => {
-        validate();
-        /*
-        if (!validator.isMobilePhone(number)) {
-            phoneIsValid = false;
-            console.log(phoneIsValid);
+    const handleClick = () => {
+        if(validate()) {
+            var userData = {
+                firstName: fName,
+                lastName: lName,
+                email: address,
+                phone: number
+            };
+            setUserData(userData);
+            navigate('/register/questionnaire');
         }
-        */
     }
 
     const validate = () => {
         let isValid = true;
         let errors = {};
-        console.log(number);
         if (fName == '') {
             errors['fName'] = '* A first name is required';
             isValid = false;
@@ -58,7 +57,7 @@ const Form = () => {
     
     return (  
         <div className="form">
-            <h3>Glad to have you on board!</h3>
+            <h3>Interested? Good!</h3>
             <p>First, leave us some information to create your file:</p>
             <form>
                 <label>First Name</label>
