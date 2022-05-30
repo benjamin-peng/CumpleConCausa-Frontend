@@ -12,7 +12,7 @@ import { useState, useEffect } from 'react';
 import Endpage from './Endpage';
 
 var userData = {};
-const endpoint = ''; //replace w endpoint for server
+const endpoint = 'http://localhost:3001/'; //replace w endpoint for server
 
 const setUserData = (d) => {
   userData = d;
