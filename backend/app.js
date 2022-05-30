@@ -1,73 +1,41 @@
-const { appendFile } = require('fs');
-const express = require('express');
-const bodyParser = require('body-parser');
-const fileUpload = require('express-fileupload');
-const nodemailer = require("nodemailer");
-const pug = require('pug');
-const app = express();
-const path = require('path');
-const http = require('http');
-const { urlencoded } = require('express');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-const urlencodedParser = bodyParser.urlencoded({ extended: true });
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp-mail.outlook.com',
-  port: 587,
-  secure: false, // true for 465, false for other ports
-  auth: {
-    user: 'cumpleconcausa-bot@outlook.com', // generated ethereal user
-    pass: 'cumpleconcausabot123', // generated ethereal password
-  },
-});
+var app = express();
 
-app.set('view engine', 'ejs');
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/home', (req, res) => {
-  res.render('home');
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
-//assume the form is at form.ejs
-app.get('/form', (req, res) => {
-  res.render('form');
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 
-app.post('/form', urlencodedParser, (req, res) => {
-  //var data = JSON.parse(JSON.stringify(req.body));
-  console.log(req.body);
-
-  let data = req.body;
-
-  const options = {
-    from: "cumpleconcausa-bot@outlook.com",
-    to: "lochnessdonuts@gmail.com", //my personal email; replace with client's later
-    subject: "New user registration",
-    text: `A new user has registered. Their information is below: \n
-      age: ${data['age']}\n
-      desired involvement: ${data['action']}` //and so on and so forth
-  }
-
-  transporter.sendMail(options, (err, info) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(info.response);
-    }
-  });
-
-  res.render('form-success');
-});
-
-// const server = http.createServer((req, res) => {
-//     res.statusCode = 200;
-//     // res.setHeader('Content-Type', 'text/plain');
-//     // res.end('test');
-//   });
-  
-  app.listen(port, () => {
-    console.log(`Listening at port 3000`);
-  });
+module.exports = app;
