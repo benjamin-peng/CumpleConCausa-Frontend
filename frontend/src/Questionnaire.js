@@ -1,8 +1,9 @@
 import NextButton from './NextButton';
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
-const Questionnaire = ({setCharity, valid}) => {
-
+const Questionnaire = ({setCharity, valid, postUserData}) => {
+    const navigate = useNavigate();
     const [priority, setPriority] = useState('');
     const [error, setError] = useState('');
 
@@ -10,6 +11,11 @@ const Questionnaire = ({setCharity, valid}) => {
     const handleClick = () => {
         if (!valid) {
             setError('* Please fill out the user data form first');
+        } else {
+            setError('');
+            setCharity(matchCharity());
+            postUserData();
+            navigate('/register/done');
         }
     };
 

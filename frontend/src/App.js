@@ -9,8 +9,10 @@ import Bottom from './Bottom';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Questionnaire from './Questionnaire';
 import { useState, useEffect } from 'react';
+import Endpage from './Endpage';
 
 var userData = {};
+const endpoint = ''; //replace w endpoint for server
 
 const setUserData = (d) => {
   userData = d;
@@ -19,7 +21,14 @@ const setUserData = (d) => {
 
 const setCharity = (c) => {
   userData.charity = c;
-  console.log(userData);
+};
+
+const postUserData = () => {
+  fetch(endpoint, {
+    method: 'POST',
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(userData)
+  });
 };
 
 function App() {
@@ -36,7 +45,8 @@ function App() {
             <Route path="/about" element={<About userData={userData} />}></Route>
             <Route path="/register/video" element={<VideoOne />}></Route>
             <Route path="/register/form" element={<Form setUserData={setUserData} setValid={setValid}/>}></Route>
-            <Route path="/register/questionnaire" element={<Questionnaire setCharity={setCharity} valid={valid}/>}></Route>
+            <Route path="/register/questionnaire" element={<Questionnaire setCharity={setCharity} valid={valid} postUserData={postUserData}/>}></Route>
+            <Route path="/register/done" element={<Endpage />}></Route>
           </Routes>
         </div>
         <Bottom />
