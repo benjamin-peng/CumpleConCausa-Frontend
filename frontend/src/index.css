@@ -64,6 +64,7 @@ img {
 }
 .bottom p {
   color: rgb(203, 196, 196);
+  text-align: center;
 }
 .form p {
   padding-bottom: 10px;
@@ -76,7 +77,8 @@ img {
   box-sizing: border-box;
   display: block;
 }
-.form button {
+button {
+  margin: auto;
   width: 100%;
   background: #28b0bf;
   color: #fff;
@@ -100,7 +102,7 @@ iframe {
 .nextButton {
   margin: auto;
   width: 70px;  
-  padding: 10px;
+  padding: 20px;
 }
 .text-danger {
   padding-bottom: 10px;
@@ -108,7 +110,25 @@ iframe {
   font-size: 12px;
 }
 .questionnaire input {
-  width: 100%;
-  padding: 6px 10px;
   margin: 10px 0;
+}
+.questionText {
+  padding-top: 10px;
+}
+.options label {
+  padding-left: 10px;
+}
+.questionnaire select {
+  position: fixed;
+  bottom: 100;
+  right: 560px;
+}
+.question {
+  padding: 3px;
+}
+.questionnaire label {
+  font-size: 14px;
+}
+#q4 {
+  padding-bottom: 10px;
 }

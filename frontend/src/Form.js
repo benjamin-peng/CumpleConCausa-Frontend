@@ -5,7 +5,7 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
 import { useNavigate } from "react-router-dom";
 
-const Form = ({setUserData}) => {
+const Form = ({setUserData, setValid}) => {
     const navigate = useNavigate();
 
     const [fName, setfName] = useState(''); 
@@ -22,6 +22,7 @@ const Form = ({setUserData}) => {
                 email: address,
                 phone: number
             };
+            setValid(true);
             setUserData(userData);
             navigate('/register/questionnaire');
         }
@@ -40,6 +41,10 @@ const Form = ({setUserData}) => {
         }
         if (address == '') { //TODO:: implement address verification using package
             errors['address'] = '* An address is required';
+            isValid = false;
+        }
+        else if (!validator.isEmail(address)) {
+            errors['address'] ='* Please enter a valid email address';
             isValid = false;
         }
         if (number === undefined) {
