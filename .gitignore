@@ -316,3 +316,6 @@ node_modules
 psd
 thumb
 sketch
+
+#config
+**/logs
