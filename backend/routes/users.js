@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
 const config = require('../config/config.json');
+const User = require('../models/user');
 
 //TODO:: Change IP whitelist when shipped!
 
@@ -15,17 +16,25 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
 });
 
 router.post('/', function(req, res, next) {
+  const user = new User(req.body);
+  /*
+  const user = new User({
+    firstName: "adsf",
+    lastName: "adsf",
+    email: "asdf",
+    phone: "asdf",
+    charity: "asdf"
+  })
+  */
   console.log('test');
   console.log(req.body);
-  
-  client.connect(err => {
-    console.log('connected');
-    /*
-    const db = client.db('users');
-    const col = db.collection('userInfo');
-    col.insertOne(req.body);
-    */
-    //client.close();
+
+  user.save()
+  .then((result) => {
+    res.send(result);
+  })
+  .catch((err) => {
+    console.log(err);
   });
 
 });
