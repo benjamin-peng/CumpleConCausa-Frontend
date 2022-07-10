@@ -3,7 +3,11 @@ Code for the Technify 2022 project Cumple Con Causa
 
 ## Contributors
 - Kulpreet Singh Dhankhar - PM
-- Benjamin Peng - Developer
-- Colin Wu - Developer
-- Piyush Maheshwari - Developer
-- Islina Shan - Developer
+- Asritha Nagubandi - PM
+- Nidhishreddy Kundur - PM  
+- Youyou Zhao - PM
+- Rahul Gouni - PM
+- Benjamin Peng - Tech Lead
+- Connor Aylett - Developer
+- Andrew Cao - Developer
+- Eli Newman - Developer
