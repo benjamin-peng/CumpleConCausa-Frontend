@@ -25,81 +25,93 @@ const Questionnaire = ({setCharity, valid, postUserData}) => {
 
     return (  
         <div className="questionnaire">
-            <h3>Time to find an NGO partner! Fill out the form below to be matched.</h3>
-            <p className="questionText">If you had to choose how to spend your Saturday, what would you choose?</p>
+            <h3>Help us find an NGO that you might be interested to work with by taking a small quiz. It won’t take longer than 2 minutes. </h3>
+            <p className="questionText">What interests you the most from the following list?</p>
+            <div className="options">
+                <form>
+                    <input type="checkbox" name="findNGO" onClick={() => setPriority('volunteering')} required />
+                    <label>Healthcare</label>
+                    <br />
+                    <input type="checkbox" name="findNGO" onClick={() => setPriority('involved')} required />
+                    <label>Education</label>
+                    <br />
+                    <input type="checkbox" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Helping Children</label>
+                    <br />
+                    <input type="checkbox" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Disaster-relief</label>
+                    <br />
+                    <input type="checkbox" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Environment</label>
+                    <br />
+                    <input type="checkbox" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Other</label>
+                </form>
+            </div>
+            <p className="questionText">What type of activity do you want to be involved in?</p>
             <div className="options">
                 <form>
                     <input type="radio" name="findNGO" onClick={() => setPriority('volunteering')} required />
-                    <label>I would go to Arraiján to reforest, getting my hands dirty with mud, planting seedlings. </label>
+                    <label>Fundraising</label>
                     <br />
                     <input type="radio" name="findNGO" onClick={() => setPriority('involved')} required />
-                    <label>I would visit a girls' home in the city, play with them and help them comb their hair. </label>
+                    <label>Empowerment</label>
                     <br />
                     <input type="radio" name="findNGO" onClick={() => setPriority('uninvolved')} required />
-                    <label>I would party or go to the mall, but I would be willing to donate to a cause.</label>
+                    <label>Charitable</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Service-oriented</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Other</label>
                 </form>
             </div>
-            <p className="questionText">Rank the following fields by interest, with 1 being greatest and 10 being least:</p>
-            <div className="question" id="q1">
-                <label htmlFor="rank">Education</label>
-                <select name="rank" id="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <br /><br /><h3>Now that we understand your interests, we would like to know more about you.</h3>
+            <p className="questionText">How old are you?</p>
+            <div className="options">
+                <form>
+                    <input type="radio" name="findNGO" onClick={() => setPriority('volunteering')} required />
+                    <label>Under 13</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('involved')} required />
+                    <label>13-18</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Over 18</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Not Applicable</label>
+                </form>
             </div>
-            <div className="question" id="q2">
-                <label htmlFor="rank">Health</label>
-                <select name="rank" id="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <p className="questionText">How do you want to celebrate your Cumple Con Causa?</p>
+            <div className="options">
+                <form>
+                    <input type="radio" name="findNGO" onClick={() => setPriority('volunteering')} required />
+                    <label>Virtually</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('involved')} required />
+                    <label>Local In-person Event</label>
+                    <br />
+                </form>
             </div>
-            <div className="question" id="q3">
-                <label htmlFor="rank">Environment and Sustainability</label>
-                <select name="rank" id="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <p className="questionText">I want to work for an...</p>
+            <div className="options">
+                <form>
+                    <input type="radio" name="findNGO" onClick={() => setPriority('volunteering')} required />
+                    <label>International NGO</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('involved')} required />
+                    <label>National NGO</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>Community-based NGO</label>
+                    <br />
+                    <input type="radio" name="findNGO" onClick={() => setPriority('uninvolved')} required />
+                    <label>City-wide NGO</label>
+                </form>
             </div>
-            <div className="question" id="q4">
-                <label htmlFor="rank">Hunger and Nutrition</label>
-                <select name="rank" id="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
+            
             <div className="text-danger">{error}</div>
             <NextButton handleClick={handleClick}></NextButton>
         </div>
