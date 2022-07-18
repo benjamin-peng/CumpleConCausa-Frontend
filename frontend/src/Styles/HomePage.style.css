@@ -1,0 +1,57 @@
+.infoBox{
+    display: flex;
+    /* border: solid; */
+    height: auto;
+    width: 94%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+}
+
+.photoBox{
+    display: flex;
+    flex-direction: column;
+    /* border: solid; */
+    height: auto;
+    width: 40%;
+}
+
+.textBox{
+    display: flex;
+    /* border: solid; */
+    height: auto;
+    width: 40%;
+    flex-direction: column;
+}
+
+.donationBox{
+    height: 180px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: #28b0bf;
+}
+
+.donationText{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 28px;
+    color: white
+}
+
+.donateButton{
+    color: #28b0bf;
+    background-color: white;
+    padding: 15px;
+    border-radius: 24px;
+    line-height: 1em;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Greycliff,Lato,sans-serif;
+    display: inline-block;
+}
