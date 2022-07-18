@@ -1,0 +1,26 @@
+.infoBox{
+    display: flex;
+    border: solid;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+}
+
+.photoBox{
+    display: flex;
+    border: solid;
+    height: auto;
+    width: 40%;
+}
+
+.textBox{
+    display: flex;
+    border: solid;
+    height: auto;
+    width: 40%;
+    flex-direction: column;
+}
