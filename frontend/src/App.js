@@ -11,6 +11,7 @@ import Questionnaire from './Pages/Questionnaire';
 import { useState, useEffect } from 'react';
 import Endpage from './Pages/Endpage';
 import Partners from './Pages/Partners';
+import FAQs from './Pages/FAQs';
 
 var userData = {};
 const endpoint = 'http://localhost:3001/'; //replace w endpoint for server
@@ -48,6 +49,9 @@ function App() {
             <Route path="/register/form" element={<Form setUserData={setUserData} setValid={setValid}/>}></Route>
             <Route path="/register/questionnaire" element={<Questionnaire setCharity={setCharity} valid={valid} postUserData={postUserData}/>}></Route>
             <Route path="/register/done" element={<Endpage />}></Route>
+
+            <Route path="/FAQs" element={<FAQs />}></Route>
+
           </Routes>
         </div>
         <Bottom />
