@@ -17,16 +17,7 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
 
 router.post('/', function(req, res, next) {
   const user = new User(req.body);
-  /*
-  const user = new User({
-    firstName: "adsf",
-    lastName: "adsf",
-    email: "asdf",
-    phone: "asdf",
-    charity: "asdf"
-  })
-  */
-  console.log('test');
+
   console.log(req.body);
 
   user.save()

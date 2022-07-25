@@ -41,9 +41,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.post('/', (req, res, next) => {
-  console.log(req.body.description);
-  //res.end('Will add the dish: ' + req.body.name + ' with details: ' + req.body.description);
- });
-
 module.exports = app;
