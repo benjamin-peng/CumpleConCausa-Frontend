@@ -4,6 +4,21 @@ export default styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    a {
+        display: inline-flex;
+    }
+    img {
+        width: 100px;
+        max-height: 20vh;
+        width: auto;
+        margin: 20px 40px 20px 40px;
+    }
+    .partners-box {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100vw;
+    }
     #top {
         margin-bottom: 20px;
     }
@@ -14,7 +29,6 @@ export default styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
     }
     #banner-caption {
         color: white;
