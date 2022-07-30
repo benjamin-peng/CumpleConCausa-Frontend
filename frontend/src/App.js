@@ -23,6 +23,10 @@ const setCharity = (c) => {
   userData.charity = c;
 };
 
+const getCharity = () => {
+  return userData.charity;
+};
+
 const postUserData = () => {
   fetch(endpoint, {
     method: 'POST',
@@ -46,7 +50,7 @@ function App() {
             <Route path="/register/video" element={<VideoOne />}></Route>
             <Route path="/register/form" element={<Form setUserData={setUserData} setValid={setValid}/>}></Route>
             <Route path="/register/questionnaire" element={<Questionnaire setCharity={setCharity} valid={valid} postUserData={postUserData}/>}></Route>
-            <Route path="/register/done" element={<Endpage />}></Route>
+            <Route path="/register/done" element={<Endpage userData={userData}/>}></Route>
           </Routes>
         </div>
         <Bottom />
