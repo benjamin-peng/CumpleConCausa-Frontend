@@ -5,6 +5,7 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
 import { useNavigate } from "react-router-dom";
 import Navbar from '../Components/Navbar';
+import FormStyled from '../Styles/Form.styled';
 
 const Form = ({setUserData, setValid}) => {
     const navigate = useNavigate();
@@ -62,32 +63,35 @@ const Form = ({setUserData, setValid}) => {
 
     
     return (  
-        <div className="form">
-            <Navbar></Navbar>
-            <h3>Interested? Good!</h3>
-            <p>First, leave us some information to create your file:</p>
-            <form>
-                <label>First Name</label>
-                <input type="text" value={fName} onChange={(e) => {
-                    setfName(e.target.value);
-                }} required />
-                <div className="text-danger">{errors["fName"]}</div>
-                <label>Last Name</label>
-                <input type="text" value={lName} onChange={(e) => {
-                    setlName(e.target.value);
-                }} required />
-                <div className="text-danger">{errors["lName"]}</div>
-                <label>Phone</label>
-                <PhoneInput value={number} onChange={setNumber} required/>
-                <div className="text-danger">{errors["number"]}</div>
-                <label>Email Address</label>
-                <input type="text" value={address} onChange={(e) => {
-                    setAddress(e.target.value);
-                }} required />
-                <div className="text-danger">{errors["address"]}</div>
-            </form>
-            <NextButton handleClick={handleClick}></NextButton>
-        </div>
+        <FormStyled>
+            <div className="form">
+                <Navbar></Navbar>
+                <h3>Interested? Good!</h3>
+                <p>First, leave us some information to create your file:</p>
+                <form>
+                    <label>First Name</label>
+                    <input type="text" value={fName} onChange={(e) => {
+                        setfName(e.target.value);
+                    }} required />
+                    <div className="text-danger">{errors["fName"]}</div>
+                    <label>Last Name</label>
+                    <input type="text" value={lName} onChange={(e) => {
+                        setlName(e.target.value);
+                    }} required />
+                    <div className="text-danger">{errors["lName"]}</div>
+                    <label>Phone</label>
+                    <PhoneInput value={number} onChange={setNumber} required/>
+                    <div className="text-danger">{errors["number"]}</div>
+                    <label>Email Address</label>
+                    <input type="text" value={address} onChange={(e) => {
+                        setAddress(e.target.value);
+                    }} required />
+                    <div className="text-danger">{errors["address"]}</div>
+                </form>
+                <NextButton handleClick={handleClick}></NextButton>
+            </div>
+        </FormStyled>
+       
     );
 }
  
