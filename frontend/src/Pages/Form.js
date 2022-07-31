@@ -4,6 +4,7 @@ import validator from 'validator';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
 import { useNavigate } from "react-router-dom";
+import Navbar from '../Components/Navbar';
 
 const Form = ({setUserData, setValid}) => {
     const navigate = useNavigate();
@@ -62,6 +63,7 @@ const Form = ({setUserData, setValid}) => {
     
     return (  
         <div className="form">
+            <Navbar></Navbar>
             <h3>Interested? Good!</h3>
             <p>First, leave us some information to create your file:</p>
             <form>

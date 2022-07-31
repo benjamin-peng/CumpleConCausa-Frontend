@@ -1,12 +1,12 @@
 import NextButton from '../Components/NextButton';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import Navbar from '../Components/Navbar';
 
 const Questionnaire = ({setCharity, valid, postUserData}) => {
     const navigate = useNavigate();
     const [priority, setPriority] = useState('');
     const [error, setError] = useState('');
-
 
     const handleClick = () => {
         if (!valid) {
@@ -14,96 +14,147 @@ const Questionnaire = ({setCharity, valid, postUserData}) => {
         } else {
             setError('');
             setCharity(matchCharity());
-            postUserData();
+            //postUserData();
             navigate('/register/done');
         }
     };
 
+    const [checkedState, setCheckedState] = useState(new Array(5).fill([]));
+
+    const handleOnChangeCheck = (question, position) => {
+        const updatedCheckedState = (structuredClone(checkedState));
+        if(updatedCheckedState[question].includes(position)){
+            var index = updatedCheckedState[question].indexOf(position)
+            updatedCheckedState[question].splice(index, 1);
+        }
+        else{
+            updatedCheckedState[question].push(position);
+        }
+        setCheckedState(updatedCheckedState);
+    };
+
+    const handleOnChange = (question, position) =>{
+        const updatedCheckedState = (structuredClone(checkedState));
+        updatedCheckedState[question] = [position];
+        setCheckedState(updatedCheckedState);
+    };
+
     const matchCharity = () => { //TODO:: implement algorithm to math with charity
-        return 'placeholder';
+        const ngoData = [
+            {name: "NGO 1", scores: [[0], [0], [0], [0], [0]], line1: "This is NGO 1.", line2: "Every cent counts.", line3: "Help clean cats."},
+            {name: "NGO 2", scores: [[1], [1], [1], [1], [1]], line1: "This is NGO 2.", line2: "Take the dirt road.", line3: "Gates to a better world."},
+            {name: "NGO 3", scores: [[0, 1, 2, 3, 4, 5], [0], [0], [0], [0]], line1: "This is NGO 3.", line2: "The world runs on us.", line3: "Beat the aliens."}
+        ];
+        var ngoComp = [ngoData.length]
+        for(var i=0; i<ngoData.length; i++){
+            let sum = 0;
+            for(var j=0; j<ngoData[i].scores.length; j++){
+                for(var k=0; k<ngoData[i].scores[j].length; k++){
+                    if(checkedState[j].includes(ngoData[i].scores[j][k])){
+                        sum++;
+                    }
+                }
+            }
+            ngoComp[i] = {name: ngoData[i].name, similarity: sum, line1: ngoData[i].line1, line2: ngoData[i].line2, line3: ngoData[i].line3};
+        }
+        return ngoComp;
     };
 
     return (  
         <div className="questionnaire">
-            <h3>Time to find an NGO partner! Fill out the form below to be matched.</h3>
-            <p className="questionText">If you had to choose how to spend your Saturday, what would you choose?</p>
+            <Navbar></Navbar>
+            <h3>Help us find an NGO that you might be interested to work with by taking a small quiz. It won’t take longer than 2 minutes. </h3>
+            <p className="questionText">What interests you the most from the following list?</p>
             <div className="options">
                 <form>
-                    <input type="radio" name="findNGO" onClick={() => setPriority('volunteering')} required />
-                    <label>I would go to Arraiján to reforest, getting my hands dirty with mud, planting seedlings. </label>
+                    <input type="checkbox" name="ngo-type" onClick={() => handleOnChangeCheck(0, 0)} required />
+                    <label>Healthcare</label>
                     <br />
-                    <input type="radio" name="findNGO" onClick={() => setPriority('involved')} required />
-                    <label>I would visit a girls' home in the city, play with them and help them comb their hair. </label>
+                    <input type="checkbox" name="ngo-type" onClick={() => handleOnChangeCheck(0, 1)} required />
+                    <label>Education</label>
                     <br />
-                    <input type="radio" name="findNGO" onClick={() => setPriority('uninvolved')} required />
-                    <label>I would party or go to the mall, but I would be willing to donate to a cause.</label>
+                    <input type="checkbox" name="ngo-type" onClick={() => handleOnChangeCheck(0, 2)} required />
+                    <label>Helping Children</label>
+                    <br />
+                    <input type="checkbox" name="ngo-type" onClick={() => handleOnChangeCheck(0, 3)} required />
+                    <label>Disaster-relief</label>
+                    <br />
+                    <input type="checkbox" name="ngo-type" onClick={() => handleOnChangeCheck(0, 4)} required />
+                    <label>Environment</label>
+                    <br />
+                    <input type="checkbox" name="ngo-type" onClick={() => handleOnChangeCheck(0, 5)} required />
+                    <label>Other</label>
                 </form>
             </div>
-            <p className="questionText">Rank the following fields by interest, with 1 being greatest and 10 being least:</p>
-            <div className="question" id="q1">
-                <label htmlFor="rank">Education</label>
-                <select name="rank" id="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <p className="questionText">What type of activity do you want to be involved in?</p>
+            <div className="options">
+                <form>
+                    <input type="radio" name="ngo-activity" onClick={() => handleOnChange(1, 0)} required />
+                    <label>Fundraising</label>
+                    <br />
+                    <input type="radio" name="ngo-activity" onClick={() => handleOnChange(1, 1)} required />
+                    <label>Empowerment</label>
+                    <br />
+                    <input type="radio" name="ngo-activity" onClick={() => handleOnChange(1, 2)} required />
+                    <label>Charitable</label>
+                    <br />
+                    <input type="radio" name="ngo-activity" onClick={() => handleOnChange(1, 3)} required />
+                    <label>Service-oriented</label>
+                    <br />
+                    <input type="radio" name="ngo-activity" onClick={() => handleOnChange(1, 4)} required />
+                    <label>Other</label>
+                </form>
             </div>
-            <div className="question" id="q2">
-                <label htmlFor="rank">Health</label>
-                <select name="rank" id="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <br /><br /><h3>Now that we understand your interests, we would like to know more about you.</h3>
+            <p className="questionText">How old are you?</p>
+            <div className="options">
+                <form>
+                    <input type="radio" name="age" onClick={() => handleOnChange(2, 0)} required />
+                    <label>Under 13</label>
+                    <br />
+                    <input type="radio" name="age" onClick={() => handleOnChange(2, 1)} required />
+                    <label>13-18</label>
+                    <br />
+                    <input type="radio" name="age" onClick={() => handleOnChange(2, 2)} required />
+                    <label>Over 18</label>
+                    <br />
+                    <input type="radio" name="age" onClick={() => handleOnChange(2, 3)} required />
+                    <label>Not Applicable</label>
+                </form>
             </div>
-            <div className="question" id="q3">
-                <label htmlFor="rank">Environment and Sustainability</label>
-                <select name="rank" id="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <p className="questionText">How do you want to celebrate your Cumple Con Causa?</p>
+            <div className="options">
+                <form>
+                    <input type="radio" name="location" onClick={() => handleOnChange(3, 0)} required />
+                    <label>Virtually</label>
+                    <br />
+                    <input type="radio" name="location" onClick={() => handleOnChange(3, 1)} required />
+                    <label>Local In-person Event</label>
+                    <br />
+                </form>
             </div>
-            <div className="question" id="q4">
-                <label htmlFor="rank">Hunger and Nutrition</label>
-                <select name="rank" id="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
+            <p className="questionText">I want to work for an...</p>
+            <div className="options">
+                <form>
+                    <input type="radio" name="ngo-spread" onClick={() => handleOnChange(4, 0)} required />
+                    <label>International NGO</label>
+                    <br />
+                    <input type="radio" name="ngo-spread" onClick={() => handleOnChange(4, 1)} required />
+                    <label>National NGO</label>
+                    <br />
+                    <input type="radio" name="ngo-spread" onClick={() => handleOnChange(4, 2)} required />
+                    <label>Community-based NGO</label>
+                    <br />
+                    <input type="radio" name="ngo-spread" onClick={() => handleOnChange(4, 3)} required />
+                    <label>City-wide NGO</label>
+                </form>
             </div>
+            
             <div className="text-danger">{error}</div>
             <NextButton handleClick={handleClick}></NextButton>
         </div>
     );
 }
  
+export var ngoComp;
 export default Questionnaire;
