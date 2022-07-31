@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react';
 import Endpage from './Pages/Endpage';
 import Partners from './Pages/Partners';
 import FAQs from './Pages/FAQs';
+import ContactUs from './Pages/ContactUs';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
             <Route path="/register/questionnaire" element={<Questionnaire setCharity={setCharity} valid={valid} postUserData={postUserData}/>}></Route>
             <Route path="/register/done" element={<Endpage userData={userData} />}></Route>
             <Route path="/FAQs" element={<FAQs />}></Route>
+            <Route path ="/ContactUs" element={<ContactUs/>}></Route>
           </Routes>
         </div>
         <Bottom />
