@@ -6,13 +6,13 @@ function Footer() {
     <div className="footer">
         <div className='footerLinks'>
             {/* NEED TO ADD IN PROPER LINKS */}
-            <a className='footerLink' href="/about">FAQS</a>
-            <a className='footerLink' href="/about">Contact Info</a>
-            <a className='footerLink' href="/about">Testimonials</a>
+            <a className='footerLink' href="/FAQs">FAQS</a>
+            <a className='footerLink' href="/contactus">Contact Info</a>
+            <a className='footerLink' href="/testimonials">Testimonials</a>
             <a className='footerLink' href="/about">About Us</a>
-            <a className='footerLink' href="/about">How It Works</a>
-            <a className='footerLink' href="/about">Get Started</a>
-            <a className='footerLink' href="/about">NGO Partners</a>
+            <a className='footerLink' href="/howitworks">How It Works</a>
+            <a className='footerLink' href="/register/video">Get Started</a>
+            <a className='footerLink' href="/partners">NGO Partners</a>
         </div>
         <div className='socialBox'>
             <a href="https://instagram.com/cumpleconcausa" target="_blank">

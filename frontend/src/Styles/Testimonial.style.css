@@ -1,0 +1,36 @@
+.TestimonialBox{
+    display: flex;
+    border: .5px solid #28b0bf;
+    height: auto;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 32px;
+    padding-bottom: 24px;
+}
+
+.TopTestimonialBox{
+    display: flex;
+    border-bottom: .5px solid #28b0bf;
+    height: auto;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 32px;
+    padding-bottom: 24px;
+}
+
+.Title{
+    display: flex;
+    height: auto;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 32px;
+    padding-bottom: 0px;
+    color: #28b0bf;
+    font-family: 'Times New Roman', Times, serif;
+}

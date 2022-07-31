@@ -12,7 +12,29 @@ import { useState, useEffect } from 'react';
 import Endpage from './Pages/Endpage';
 import Partners from './Pages/Partners';
 import FAQs from './Pages/FAQs';
+import HowItWorks from './Pages/HowItWorks';
+import Testimonials from './Pages/Testimonials';
 import ContactUs from './Pages/ContactUs';
+
+var userData = {};
+const endpoint = 'http://localhost:3001/'; //replace w endpoint for server
+
+const setUserData = (d) => {
+  userData = d;
+  console.log(d);
+};
+
+const setCharity = (c) => {
+  userData.charity = c;
+};
+
+const postUserData = () => {
+  fetch(endpoint, {
+    method: 'POST',
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(userData)
+  });
+};
 
 function App() {
 
@@ -50,13 +72,15 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About userData={userData} />}></Route>
+            <Route path="/howitworks" element={<HowItWorks userData={userData} />}></Route>
             <Route path="/partners" element={<Partners></Partners>}></Route>
             <Route path="/register/video" element={<VideoOne />}></Route>
             <Route path="/register/form" element={<Form setUserData={setUserData} setValid={setValid}/>}></Route>
             <Route path="/register/questionnaire" element={<Questionnaire setCharity={setCharity} valid={valid} postUserData={postUserData}/>}></Route>
+            <Route path="/testimonials" element={<Testimonials userData={userData} />}></Route>
             <Route path="/register/done" element={<Endpage userData={userData} />}></Route>
             <Route path="/FAQs" element={<FAQs />}></Route>
-            <Route path ="/ContactUs" element={<ContactUs/>}></Route>
+            <Route path ="/contactus" element={<ContactUs/>}></Route>
           </Routes>
         </div>
         <Bottom />
