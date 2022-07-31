@@ -8,12 +8,14 @@ export default styled.div`
         width: 80vw;
         display: flex;
         flex-direction: column;
+        margin-bottom: 1rem;
     }
     .arrows {
         display: flex;
         justify-content: center;
     }
     .ngo{
+        margin: 1rem 0 1rem 0;
         width: 50%;
         height: 500px;
         padding: 1rem 0 1rem 0;
