@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/CumpleConCausa/static/css/main.233033f2.css",
+    "main.js": "/CumpleConCausa/static/js/main.7ab26300.js",
+    "static/js/787.cda612ba.chunk.js": "/CumpleConCausa/static/js/787.cda612ba.chunk.js",
+    "static/media/SomosPanama.png": "/CumpleConCausa/static/media/SomosPanama.ad563ea4aec79b33b235.png",
+    "static/media/PRM.jpeg": "/CumpleConCausa/static/media/PRM.8eeae2ffb0995b9f44c4.jpeg",
+    "static/media/VVP.png": "/CumpleConCausa/static/media/VVP.40314ddea5ed20bd6fbf.png",
+    "static/media/BAP.png": "/CumpleConCausa/static/media/BAP.ce0e6ee824c8ad17624f.png",
+    "static/media/FL.jpeg": "/CumpleConCausa/static/media/FL.f776ec8bbeed264ad857.jpeg",
+    "static/media/hbd.jpg": "/CumpleConCausa/static/media/hbd.15df5924d115ed3ac284.jpg",
+    "static/media/UnitedWay.jpeg": "/CumpleConCausa/static/media/UnitedWay.718c5171a3c39e701d90.jpeg",
+    "static/media/NutreHogar.jpeg": "/CumpleConCausa/static/media/NutreHogar.b25847dc6dda5ace7120.jpeg",
+    "static/media/DAP.jpeg": "/CumpleConCausa/static/media/DAP.cff0b5b5bdc9792bf571.jpeg",
+    "static/media/FHB.png": "/CumpleConCausa/static/media/FHB.b4866ddf4214dba15a3d.png",
+    "static/media/cupcake.jpeg": "/CumpleConCausa/static/media/cupcake.1562f17dae81293a9dcd.jpeg",
+    "static/media/FUN.png": "/CumpleConCausa/static/media/FUN.834654450cf21b48ac8a.png",
+    "static/media/AISP.png": "/CumpleConCausa/static/media/AISP.375e435e5fbc131f5c97.png",
+    "static/media/LUCES.png": "/CumpleConCausa/static/media/LUCES.bfcd4d7c8b27a35e53ac.png",
+    "static/media/ZP.png": "/CumpleConCausa/static/media/ZP.31c3b5e4a06d286b2ef1.png",
+    "static/media/SpayPanama.webp": "/CumpleConCausa/static/media/SpayPanama.f2dbcf882ff8ba7c00df.webp",
+    "static/media/Techo.png": "/CumpleConCausa/static/media/Techo.ac704ba16a3eff5671fe.png",
+    "static/media/FTV.png": "/CumpleConCausa/static/media/FTV.82062fee9796dbbee968.png",
+    "static/media/FRS.png": "/CumpleConCausa/static/media/FRS.4280462c71f8614f84bf.png",
+    "static/media/left_arrow.png": "/CumpleConCausa/static/media/left_arrow.fa327016ed2854d4beed.png",
+    "static/media/right_arrow.png": "/CumpleConCausa/static/media/right_arrow.782381ff8f8a618b3144.png",
+    "static/media/APLAFA.png": "/CumpleConCausa/static/media/APLAFA.d461ea8bb44a6867824b.png",
+    "static/media/SesameWorkshop.svg": "/CumpleConCausa/static/media/SesameWorkshop.1351465776625c4a68d8.svg",
+    "static/media/FCM.png": "/CumpleConCausa/static/media/FCM.48a73727901f9b915a5e.png",
+    "static/media/logo.svg": "/CumpleConCausa/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/instagramLogo.svg": "/CumpleConCausa/static/media/instagramLogo.062f333918be06be07149b1c81e879dd.svg",
+    "index.html": "/CumpleConCausa/index.html",
+    "main.233033f2.css.map": "/CumpleConCausa/static/css/main.233033f2.css.map",
+    "main.7ab26300.js.map": "/CumpleConCausa/static/js/main.7ab26300.js.map",
+    "787.cda612ba.chunk.js.map": "/CumpleConCausa/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.233033f2.css",
+    "static/js/main.7ab26300.js"
+  ]
+}
