@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.233033f2.css",
-    "main.js": "./static/js/main.0f848e74.js",
+    "main.js": "./static/js/main.b033af7e.js",
     "static/js/787.cda612ba.chunk.js": "./static/js/787.cda612ba.chunk.js",
     "static/media/SomosPanama.png": "./static/media/SomosPanama.ad563ea4aec79b33b235.png",
     "static/media/PRM.jpeg": "./static/media/PRM.8eeae2ffb0995b9f44c4.jpeg",
@@ -31,11 +31,11 @@
     "static/media/instagramLogo.svg": "./static/media/instagramLogo.062f333918be06be07149b1c81e879dd.svg",
     "index.html": "./index.html",
     "main.233033f2.css.map": "./static/css/main.233033f2.css.map",
-    "main.0f848e74.js.map": "./static/js/main.0f848e74.js.map",
+    "main.b033af7e.js.map": "./static/js/main.b033af7e.js.map",
     "787.cda612ba.chunk.js.map": "./static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.233033f2.css",
-    "static/js/main.0f848e74.js"
+    "static/js/main.b033af7e.js"
   ]
 }
