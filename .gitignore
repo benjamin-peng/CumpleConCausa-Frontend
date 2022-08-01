@@ -26,3 +26,4 @@ config.env
 /frontend/yarn-error.log*
 
 jsconfig.json
+node_modules
