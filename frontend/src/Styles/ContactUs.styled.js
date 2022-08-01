@@ -21,5 +21,4 @@ height: 100vh;
 }
 .footer{
     margin-top: auto;
-
 }`;

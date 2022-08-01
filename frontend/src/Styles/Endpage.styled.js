@@ -4,6 +4,9 @@ export default styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    h3 {
+        margin-bottom: 0.5rem;
+    }
     .endpage {
         width: 80vw;
         display: flex;
@@ -46,8 +49,17 @@ export default styled.div`
         width:10%;
         margin: 10px 10px;
     }
-    .ngobutton{
-        width: 30%;
-        margin: 0;
+    .ngoButton {
+        width: 20%;
+    }
+    .ngoButton button{
+        width: 100%;
+        background: #28b0bf;
+        color: #fff;
+        border: 0;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
     }
 `;

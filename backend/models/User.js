@@ -2,9 +2,13 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
-    username: {
+    charity: {
         type: String,
-        required: [true, 'username required']
+        required: [true, 'charity required']
+    },
+    email: {
+        type: String,
+        required: [true, 'email required']
     },
     firstName: {
         type: String,
@@ -14,10 +18,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, 'last name required']
     },
-    email: {
+    phone: {
         type: String,
-        required: [true, 'email required']
-    },
+        required: [true, 'phone number required']
+    }
+    /*
     password: {
         type: String,
         required: [true, 'password required'],
@@ -26,6 +31,7 @@ const UserSchema = new mongoose.Schema({
     },
     resetPasswordToken: String,
     resetPasswordExpire: Date
+    */
 })
 
 UserSchema.pre('save', async function(next) { //hooks into before save method

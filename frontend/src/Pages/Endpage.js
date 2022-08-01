@@ -5,23 +5,35 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Navbar from '../Components/Navbar';
 import EndpageStyled from "../Styles/Endpage.styled";
+import Bottom from '../Components/Bottom';
 
-const Endpage = ({userData}) => {
+const Endpage = ({ charityCollection, setCharity }) => {
     
-    let ngos = userData.charity;
+    let ngos = charityCollection;
 
-    let max = userData.charity[0];
-    let second = userData.charity[0];
+    let max = charityCollection[0];
+
+    const [cIndex, setCIndex] = useState(0); 
 
     ngos.sort(function(a,b) {
         return b.similarity - a.similarity
     });
 
-    for (var i = 0 ; i < userData.charity.length; i++) {
-        if (max < userData.charity[i].similarity) {
-          max = userData.charity[i];
+    for (var i = 0 ; i < ngos.length; i++) {
+        if (max < ngos[i].similarity) {
+          max = ngos[i];
         }
     }
+
+    console.log(ngos);
+
+    const formChange = (e) => {
+        setCIndex(parseInt(e.target.value));
+    };
+
+    const handleClick = () => {
+        setCharity(charityCollection[cIndex].name);
+    };
 
     return (  
         <EndpageStyled>
@@ -41,18 +53,21 @@ const Endpage = ({userData}) => {
                         <input type="image" src={right}/>
                     </div>
                     <i><p className="ngop">I will pick this NGO: </p></i>
-                    <select name="NGOs">
-                        <option value="Example 1">{ngos[0].name}</option>
-                        <option value="Example 2">{ngos[1].name}</option>
-                        <option value="Example 3">{ngos[2].name}</option>
+                    <select name="NGOs" onChange={formChange}>
+                        <option value="0">{ngos[0].name}</option>
+                        <option value="1">{ngos[1].name}</option>
+                        <option value="2">{ngos[2].name}</option>
                     </select>
-                    <button className="ngobutton" type="button">CONFIRM</button>
+                    <div className="ngoButton">
+                        <button onClick={handleClick}>CONFIRM</button>
+                    </div>
                 </div>
                 <p>Not happy with your recommendations? Retake the quiz&nbsp;
                     <a href="/register/form">here</a> or view a complete list of NGOs&nbsp;
                     <a href="/list">here</a>.
                 </p>
             </div>
+            <Bottom></Bottom>
         </EndpageStyled>
         
     );

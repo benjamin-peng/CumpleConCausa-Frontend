@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 export default styled.div`
     .bottom {
+        display: flex;
+        justify-content: center;
         border-top: 1px solid #f2f2f2;
         font-size: 12px;
-        bottom: 0;
-        width: 100%;
+        width: 100vw;
         padding: 10px;
         background-color: white;
-        margin-top: auto;
     }
     .bottom p {
         color: rgb(203, 196, 196);

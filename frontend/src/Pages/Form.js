@@ -6,6 +6,7 @@ import PhoneInput from 'react-phone-number-input';
 import { useNavigate } from "react-router-dom";
 import Navbar from '../Components/Navbar';
 import FormStyled from '../Styles/Form.styled';
+import Bottom from '../Components/Bottom';
 
 const Form = ({setUserData, setValid}) => {
     const navigate = useNavigate();
@@ -64,8 +65,8 @@ const Form = ({setUserData, setValid}) => {
     
     return (  
         <FormStyled>
+            <Navbar></Navbar>
             <div className="form">
-                <Navbar></Navbar>
                 <h3>Interested? Good!</h3>
                 <p>First, leave us some information to create your file:</p>
                 <form>
@@ -89,6 +90,9 @@ const Form = ({setUserData, setValid}) => {
                     <div className="text-danger">{errors["address"]}</div>
                 </form>
                 <NextButton handleClick={handleClick}></NextButton>
+            </div>
+            <div className="bottom">
+                <Bottom></Bottom>
             </div>
         </FormStyled>
        

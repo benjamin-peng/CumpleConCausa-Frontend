@@ -2,6 +2,7 @@ import person from '../Images/person.jpeg';
 import Navbar from '../Components/Navbar';
 import AboutStyled from '../Styles/About.styled';
 import LinkButton from '../Components/LinkButton';
+import Bottom from '../Components/Bottom';
 
 const About = () => {
     return (
@@ -39,6 +40,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            <Bottom />
         </AboutStyled>
     );
 }

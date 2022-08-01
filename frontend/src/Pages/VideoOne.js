@@ -2,13 +2,14 @@ import NextButton from '../Components/NextButton';
 import { useNavigate } from "react-router-dom";
 import Navbar from '../Components/Navbar';
 import VideoOneStyled from '../Styles/VideoOne.styled'
+import Bottom from '../Components/Bottom';
 
 const VideoOne = () => {
     const navigate = useNavigate();
     return (  
         <VideoOneStyled>
+            <Navbar></Navbar>
             <div className="form">
-                <Navbar></Navbar>
                 <h3>Glad to have you on board!</h3>
                 <p>Watch this video for a quick overview of what we do:</p>
                 <div className="video">
@@ -26,8 +27,10 @@ const VideoOne = () => {
                     }}></NextButton>
                 </div>
             </div>
+            <div className="bottom">
+                <Bottom></Bottom>
+            </div>
         </VideoOneStyled>
-        
     );
 }
  

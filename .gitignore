@@ -24,3 +24,5 @@ config.env
 /frontend/npm-debug.log*
 /frontend/yarn-debug.log*
 /frontend/yarn-error.log*
+
+jsconfig.json

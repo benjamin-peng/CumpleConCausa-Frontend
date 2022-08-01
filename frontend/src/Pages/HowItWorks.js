@@ -4,6 +4,7 @@ import AboutStyled from '../Styles/About.styled';
 import LinkButton from '../Components/LinkButton';
 import cupcake from '../Images/cupcake.jpeg';
 import hbd from '../Images/hbd.jpg';
+import Bottom from '../Components/Bottom';
 
 const HowItWorks = () => {
     return (
@@ -55,6 +56,7 @@ const HowItWorks = () => {
                             text="Get Started">
                         </LinkButton>
             </div>
+            <Bottom></Bottom>
         </AboutStyled>
     );
 }

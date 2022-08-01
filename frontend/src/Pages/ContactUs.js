@@ -1,6 +1,7 @@
 import ContactUsStyled from "../Styles/ContactUs.styled";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import Bottom from '../Components/Bottom';
 
 const ContactUs = () => {
     return (
@@ -26,6 +27,7 @@ const ContactUs = () => {
             <div className="footer">
                 <Footer></Footer>
             </div>
+            <Bottom></Bottom>
         </ContactUsStyled>
       );
 }

@@ -1,5 +1,6 @@
 import PartnerStyled from '../Styles/Partners.styled';
 import Navbar from '../Components/Navbar';
+import Bottom from '../Components/Bottom';
 
 const Partners = () => {
 
@@ -87,6 +88,7 @@ const Partners = () => {
                 </a>
 
             </div>
+            <Bottom></Bottom>
         </PartnerStyled>
     );
 }
