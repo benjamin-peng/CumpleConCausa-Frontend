@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CumpleConCausa/static/css/main.233033f2.css",
-    "main.js": "/CumpleConCausa/static/js/main.00eb088c.js",
+    "main.js": "/CumpleConCausa/static/js/main.d986b9a4.js",
     "static/js/787.cda612ba.chunk.js": "/CumpleConCausa/static/js/787.cda612ba.chunk.js",
     "static/media/SomosPanama.png": "/CumpleConCausa/static/media/SomosPanama.ad563ea4aec79b33b235.png",
     "static/media/PRM.jpeg": "/CumpleConCausa/static/media/PRM.8eeae2ffb0995b9f44c4.jpeg",
@@ -31,11 +31,11 @@
     "static/media/instagramLogo.svg": "/CumpleConCausa/static/media/instagramLogo.062f333918be06be07149b1c81e879dd.svg",
     "index.html": "/CumpleConCausa/index.html",
     "main.233033f2.css.map": "/CumpleConCausa/static/css/main.233033f2.css.map",
-    "main.00eb088c.js.map": "/CumpleConCausa/static/js/main.00eb088c.js.map",
+    "main.d986b9a4.js.map": "/CumpleConCausa/static/js/main.d986b9a4.js.map",
     "787.cda612ba.chunk.js.map": "/CumpleConCausa/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.233033f2.css",
-    "static/js/main.00eb088c.js"
+    "static/js/main.d986b9a4.js"
   ]
 }
