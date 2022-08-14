@@ -35,7 +35,7 @@
     align-items: center;
     padding-top: 24px;
     padding-bottom: 24px;
-    background-color: #28b0bf;
+    background-color: #65c4cf;
 }
 
 .donationText{
@@ -48,6 +48,7 @@
     color: #28b0bf;
     background-color: white;
     padding: 15px;
+    border: solid grey;
     border-radius: 24px;
     line-height: 1em;
     font-size: 18px;
