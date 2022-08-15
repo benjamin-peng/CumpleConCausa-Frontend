@@ -9,30 +9,37 @@ import Bottom from '../Components/Bottom';
 
 const Endpage = ({ charityCollection, setCharity }) => {
     
-    let ngos = charityCollection;
-
-    let max = charityCollection[0];
+    const [ngos, setngos] = useState(charityCollection);
 
     const [cIndex, setCIndex] = useState(0); 
 
-    ngos.sort(function(a,b) {
-        return b.similarity - a.similarity
-    });
-
-    for (var i = 0 ; i < ngos.length; i++) {
-        if (max < ngos[i].similarity) {
-          max = ngos[i];
+    useEffect(() =>{
+        var tmp = ngos;
+        tmp.sort(function(a,b) {
+            return b.similarity - a.similarity;
+        });
+    
+        for (var i = 0 ; i < tmp.length; i++) {
+            if (charityCollection[0] < tmp[i].similarity) {
+                charityCollection[0] = tmp[i];
+            }
         }
-    }
+        setngos(tmp);
+    }, []);
 
-    console.log(ngos);
-
-    const formChange = (e) => {
-        setCIndex(parseInt(e.target.value));
+    const ngoChange = (change) => {
+        var newIndex = cIndex + change;
+        if(newIndex < 0){
+            newIndex = ngos.length-1;
+        }
+        else if(newIndex >= ngos.length){
+            newIndex = 0;
+        }
+        setCIndex(newIndex);
     };
 
     const handleClick = () => {
-        setCharity(charityCollection[cIndex].name);
+        setCharity(ngos[cIndex].name);
     };
 
     return (  
@@ -42,22 +49,17 @@ const Endpage = ({ charityCollection, setCharity }) => {
                 <h3>Awesome!</h3>
                 <p>Based on your answers to our questions, we think you might like working with the following NGOs:</p>
                 <div className="ngo">
-                    <h3 className="ngotitle">Your Top NGO</h3>
+                    <h3 className="ngotitle">Your #{cIndex+1} NGO</h3>
                     <div className="circle"><img src={ngo_logo}>
                         </img>
                     </div>
-                    <b><p className="ngop">{ngos[0].name}</p></b>
-                    <p className="ngop">{ngos[0].line1} {ngos[0].line2} {ngos[0].line3}</p>
+                    <b><p className="ngop">{ngos[cIndex].name}</p></b>
+                    <p className="ngop">{ngos[cIndex].line1} {ngos[cIndex].line2} {ngos[cIndex].line3}</p>
                     <div className="arrows">
-                        <input type="image" src={left}/>
-                        <input type="image" src={right}/>
+                        <input type="image" src={left} onClick={() => ngoChange(-1)}/>
+                        <input type="image" src={right} onClick={() => ngoChange(1)}/>
                     </div>
                     <i><p className="ngop">I will pick this NGO: </p></i>
-                    <select name="NGOs" onChange={formChange}>
-                        <option value="0">{ngos[0].name}</option>
-                        <option value="1">{ngos[1].name}</option>
-                        <option value="2">{ngos[2].name}</option>
-                    </select>
                     <div className="ngoButton">
                         <button onClick={handleClick}>CONFIRM</button>
                     </div>
