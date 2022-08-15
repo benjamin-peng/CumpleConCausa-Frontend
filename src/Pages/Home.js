@@ -7,6 +7,8 @@ import HomePageInfoBox from '../Components/HomePageInfoBox';
 import styles from '../Styles/HomePage.style.css'
 import Footer from '../Components/Footer';
 import Bottom from '../Components/Bottom';
+import Testimonials from '../Components/Testimonials';
+import Slider from '../Components/Slider';
 
 const Home = () => {
     return (
@@ -39,6 +41,7 @@ const Home = () => {
             header="Impact & Reach"
             text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
             />
+            <Slider></Slider>
             <Footer></Footer>
             <Bottom></Bottom>
         </HomeStyled>
