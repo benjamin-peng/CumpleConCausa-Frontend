@@ -9,16 +9,46 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
     const navigate = useNavigate();
     const [priority, setPriority] = useState('');
     const [error, setError] = useState('');
+    const [errors, setErrors] = useState(['']);
+
+    const validate = () => {
+        let isValid = true;
+        let errors = {};
+        if (checkedState[0].length == 0) {
+            errors['q1'] = '* An answer is required';
+            isValid = false;
+        }
+        if (!states[1]) {
+            errors['q2'] = '* An answer is required';
+            isValid = false;
+        }
+        if (!states[2]) {
+            errors['q3'] = '* An answer is required';
+            isValid = false;
+        }
+        if (!states[3]) {
+            errors['q4'] = '* An answer is required';
+            isValid = false;
+        }
+        if (!states[4]) {
+            errors['q5'] = '* An answer is required';
+            isValid = false;
+        }
+        setErrors(errors);
+        return isValid;
+    }
 
     const handleClick = () => {
         if (!valid) {
             setError('* Please fill out the user data form first');
-        } else {
+        }else if(validate()) {
             setError('');
             setCollection(matchCharity());
             navigate('/register/done');
         }
     };
+
+    const [states, setStates] = useState([false, false, false, false, false]);
 
     const [checkedState, setCheckedState] = useState(new Array(5).fill([]));
 
@@ -35,6 +65,11 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
     };
 
     const handleOnChange = (question, position) =>{
+        var tmp = states;
+        if (!tmp[question]){
+            tmp[question] = !states[question];
+        }
+        setStates(tmp);
         const updatedCheckedState = (structuredClone(checkedState));
         updatedCheckedState[question] = [position];
         setCheckedState(updatedCheckedState);
@@ -67,6 +102,7 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
             <div className="questionnaire">
                 <h3>Help us find an NGO that you might be interested to work with by taking a small quiz. It won’t take longer than 2 minutes. </h3>
                 <p className="questionText">What interests you the most from the following list?</p>
+                <div className="text-danger">{errors["q1"]}</div>
                 <div className="options">
                     <form>
                         <input type="checkbox" name="ngo-type" onClick={() => handleOnChangeCheck(0, 0)} required />
@@ -90,6 +126,7 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
                 </div>
                 <p className="questionText">What type of activity do you want to be involved in?</p>
                 <div className="options">
+                <div className="text-danger">{errors["q2"]}</div>
                     <form>
                         <input type="radio" name="ngo-activity" onClick={() => handleOnChange(1, 0)} required />
                         <label>Fundraising</label>
@@ -109,6 +146,7 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
                 </div>
                 <br /><br /><h3>Now that we understand your interests, we would like to know more about you.</h3>
                 <p className="questionText">How old are you?</p>
+                <div className="text-danger">{errors["q3"]}</div>
                 <div className="options">
                     <form>
                         <input type="radio" name="age" onClick={() => handleOnChange(2, 0)} required />
@@ -125,6 +163,7 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
                     </form>
                 </div>
                 <p className="questionText">How do you want to celebrate your Cumple Con Causa?</p>
+                <div className="text-danger">{errors["q4"]}</div>
                 <div className="options">
                     <form>
                         <input type="radio" name="location" onClick={() => handleOnChange(3, 0)} required />
@@ -136,6 +175,7 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
                     </form>
                 </div>
                 <p className="questionText">I want to work for an...</p>
+                <div className="text-danger">{errors["q5"]}</div>
                 <div className="options">
                     <form>
                         <input type="radio" name="ngo-spread" onClick={() => handleOnChange(4, 0)} required />
