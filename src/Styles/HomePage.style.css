@@ -35,7 +35,7 @@
     align-items: center;
     padding-top: 24px;
     padding-bottom: 24px;
-    background-color: #28b0bf;
+    background-color: #65c4cf;
 }
 
 .donationText{
@@ -48,13 +48,19 @@
     color: #28b0bf;
     background-color: white;
     padding: 15px;
+    border: 2px solid grey;
     border-radius: 24px;
     line-height: 1em;
     font-size: 18px;
     font-weight: 700;
     font-family: Greycliff,Lato,sans-serif;
     display: inline-block;
+    cursor: pointer;
 }
+
+.donateButton:hover {
+    color: #ed9dd8;
+  }
 
 .footer{
     height: 200px;
@@ -65,7 +71,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 24px;
-    padding-bottom: 4em;
+    padding-bottom: 3em;
     background-color: #eae5e1;
 }
 
