@@ -13,11 +13,19 @@ export default styled.div`
         width: auto;
         margin: 20px 40px 20px 40px;
     }
+    img:hover {
+        cursor: pointer;
+    }
     .partners-box {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         width: 100vw;
+        height: auto;
+    }
+    .partner-row {
+        display: flex;
+        position: relative;
     }
     #top {
         margin-bottom: 20px;
