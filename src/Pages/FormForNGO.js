@@ -4,16 +4,38 @@ import { useNavigate } from "react-router-dom";
 import Navbar from '../Components/Navbar';
 import Bottom from '../Components/Bottom';
 import QuestionnaireStyled from '../Styles/Questionnaire.styled';
+import FormForNGOStyled from '../Styles/FormForNGO.styled';
 
-const Questionnaire = ({setCollection, valid, postUserData}) => {
+const FormForNGO = ({setngoData}) => {
     const navigate = useNavigate();
     const [priority, setPriority] = useState('');
     const [error, setError] = useState('');
     const [errors, setErrors] = useState(['']);
 
+    const [ngoName, setngoName] = useState(''); 
+    const [description, setDescription] = useState(''); 
+    const [location, setLocation] = useState(''); 
+    const [beneficiary, setBeneficiary] = useState(''); 
+
     const validate = () => {
         let isValid = true;
         let errors = {};
+        if (ngoName == '') {
+            errors['ngoName'] = '* An NGO name is required';
+            isValid = false;
+        }
+        if (description == '') {
+            errors['description'] = '* An answer is required';
+            isValid = false;
+        }
+        if (location == '') {
+            errors['location'] = '* An answer is required';
+            isValid = false;
+        }
+        if (beneficiary == '') {
+            errors['beneficiary'] = '* An answer is required';
+            isValid = false;
+        }
         if (checkedState[0].length == 0) {
             errors['q1'] = '* An answer is required';
             isValid = false;
@@ -39,12 +61,17 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
     }
 
     const handleClick = () => {
-        if (!valid) {
-            setError('* Please fill out the user data form first');
-        }else if(validate()) {
+        if(validate()) {
+            var ngoData = {
+                ngoName: ngoName,
+                description: description,
+                location: location,
+                beneficiary: beneficiary,
+                scores: checkedState
+            };
             setError('');
-            setCollection(matchCharity());
-            navigate('/register/done');
+            setngoData(ngoData);
+            navigate('/formforngo/endpage');
         }
     };
 
@@ -75,33 +102,36 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
         setCheckedState(updatedCheckedState);
     };
 
-    const matchCharity = () => { //TODO:: implement algorithm to math with charity
-        const ngoData = [
-            {name: "NGO 1", scores: [[0], [0], [0], [0], [0]], line1: "This is NGO 1.", line2: "Every cent counts.", line3: "Help clean cats."},
-            {name: "NGO 2", scores: [[1], [1], [1], [1], [1]], line1: "This is NGO 2.", line2: "Take the dirt road.", line3: "Gates to a better world."},
-            {name: "NGO 3", scores: [[0, 1, 2, 3, 4, 5], [0], [0], [0], [0]], line1: "This is NGO 3.", line2: "The world runs on us.", line3: "Beat the aliens."}
-        ];
-        var ngoComp = [ngoData.length]
-        for(var i=0; i<ngoData.length; i++){
-            let sum = 0;
-            for(var j=0; j<ngoData[i].scores.length; j++){
-                for(var k=0; k<ngoData[i].scores[j].length; k++){
-                    if(checkedState[j].includes(ngoData[i].scores[j][k])){
-                        sum++;
-                    }
-                }
-            }
-            ngoComp[i] = {name: ngoData[i].name, similarity: sum, line1: ngoData[i].line1, line2: ngoData[i].line2, line3: ngoData[i].line3};
-        }
-        return ngoComp;
-    };
-
     return (  
         <QuestionnaireStyled>
             <Navbar></Navbar>
             <div className="questionnaire">
-                <h3>Help us find an NGO that you might be interested to work with by taking a small quiz. It won’t take longer than 2 minutes. </h3>
-                <p className="questionText">What interests you the most from the following list?</p>
+                <h3>Survey for Non-governmental Organizations</h3>
+                <FormForNGOStyled>
+                    <form>
+                    <p className="questionText">Non-governmental Organization (NGO) Name:</p>
+                    <input type="text" value={ngoName} onChange={(e) => {
+                        setngoName(e.target.value);
+                    }} required />
+                    <div className="text-danger">{errors["ngoName"]}</div>
+                    <p className="questionText">Please describe your NGO in 50-100 words:</p>
+                    <input type="text" value={description} onChange={(e) => {
+                        setDescription(e.target.value);
+                    }} required />
+                    <div className="text-danger">{errors["description"]}</div>
+                    <p className="questionText">Where is your NGO physically located? Type '--' if not applicable.</p>
+                    <input type="text" value={location} onChange={(e) => {
+                        setLocation(e.target.value);
+                    }} required />
+                    <div className="text-danger">{errors["location"]}</div>
+                    <p className="questionText">Please mention the beneficiary (kids, teens, adults etc.):</p>
+                    <input type="text" value={beneficiary} onChange={(e) => {
+                        setBeneficiary(e.target.value);
+                    }} required />
+                    <div className="text-danger">{errors["beneficiary"]}</div>
+                    </form>
+                </FormForNGOStyled>
+                <p className="questionText">Please select the sustainable developmental goals your NGO focuses on:</p>
                 <div className="text-danger">{errors["q1"]}</div>
                 <div className="options">
                     <form>
@@ -133,7 +163,7 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
                         <label>Other</label>
                     </form>
                 </div>
-                <p className="questionText">What type of activity do you want to be involved in?</p>
+                <p className="questionText">What type of activities do your NGO involve in?</p>
                 <div className="options">
                 <div className="text-danger">{errors["q2"]}</div>
                     <form>
@@ -150,8 +180,7 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
                         <label>Awareness</label>
                     </form>
                 </div>
-                <br /><br /><h3>Now that we understand your interests, we would like to know more about you.</h3>
-                <p className="questionText">How do you want to celebrate your Cumple Con Causa?</p>
+                <p className="questionText">Are the activities remote or in-person?</p>
                 <div className="text-danger">{errors["q3"]}</div>
                 <div className="options">
                     <form>
@@ -165,35 +194,35 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
                         <label>Doesn't Matter</label>
                     </form>
                 </div>
-                <p className="questionText">I want to work for an...</p>
+                <p className="questionText">We are an NGO that is:</p>
                 <div className="text-danger">{errors["q4"]}</div>
                 <div className="options">
                     <form>
                         <input type="radio" name="ngo-spread" onClick={() => handleOnChange(3, 0)} required />
-                        <label>International NGO</label>
+                        <label>International</label>
                         <br />
                         <input type="radio" name="ngo-spread" onClick={() => handleOnChange(3, 1)} required />
-                        <label>National NGO</label>
+                        <label>National</label>
                         <br />
                         <input type="radio" name="ngo-spread" onClick={() => handleOnChange(3, 2)} required />
-                        <label>Community-based NGO</label>
+                        <label>Community-based</label>
                         <br />
                         <input type="radio" name="ngo-spread" onClick={() => handleOnChange(3, 3)} required />
-                        <label>City-wide NGO</label>
+                        <label>City-wide</label>
                     </form>
                 </div>
-                <p className="questionText">I would prefer to work with an NGO that is...</p>
+                <p className="questionText">What is the size of your NGO?</p>
                 <div className="text-danger">{errors["q5"]}</div>
                 <div className="options">
                     <form>
                         <input type="radio" name="ngo-spread" onClick={() => handleOnChange(4, 0)} required />
-                        <label>Small in Size</label>
+                        <label>1 to 10 people</label>
                         <br />
                         <input type="radio" name="ngo-spread" onClick={() => handleOnChange(4, 1)} required />
-                        <label>Medium in Size</label>
+                        <label>11-50 people</label>
                         <br />
                         <input type="radio" name="ngo-spread" onClick={() => handleOnChange(4, 2)} required />
-                        <label>Large in Size</label>
+                        <label>51+ people</label>
                     </form>
                 </div>
                 
@@ -204,6 +233,5 @@ const Questionnaire = ({setCollection, valid, postUserData}) => {
         </QuestionnaireStyled>
     );
 }
- 
-export var ngoComp;
-export default Questionnaire;
+
+export default FormForNGO;
