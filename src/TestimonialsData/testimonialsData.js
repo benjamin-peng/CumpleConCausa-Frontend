@@ -2,7 +2,7 @@
 const people = [
     {
       id: 1,
-      image: require('../Images/Person1.jpeg'),
+      image: require('../Images/Val.jpg'),
       name: "Valeria Vazquez",
     // title: "Customer",
       quote:
@@ -10,7 +10,7 @@ const people = [
     },
     {
       id: 2,
-      image: require('../Images/Person2.png'),
+      image: require('../Images/Alexa.jpg'),
       name: "Alexa Marie Flores Cruz",
     //  title: "Manager",
       quote:
@@ -26,7 +26,7 @@ const people = [
     },
     {
       id: 4,
-      image: require('../Images/Person2.png'),
+      image: require('../Images/Mary.jpg'),
       name: "Mary Gaby Bagatelas",
     //  title: "Participant",
       quote:
@@ -44,7 +44,7 @@ const people = [
 
     {
       id: 6,
-      image: require('../Images/Person1.jpeg'),
+      image: require('../Images/Pri.jpg'),
       name: "Priscilla Lewis",
     //  title: "Volunteer",
       quote:
@@ -53,7 +53,7 @@ const people = [
 
     {
       id: 7,
-      image: require('../Images/Person1.jpeg'),
+      image: require('../Images/Mari.jpg'),
       name: "María Paz Bejarano",
     //  title: "Volunteer",
       quote:
