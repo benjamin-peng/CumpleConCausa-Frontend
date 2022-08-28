@@ -15,6 +15,7 @@ import FAQs from './Pages/FAQs';
 import HowItWorks from './Pages/HowItWorks';
 import Testimonials from './Pages/Testimonials';
 import ContactUs from './Pages/ContactUs';
+import BirthdayValidation from './Pages/BirthdayValidation';
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
             <Route path="/howitworks" element={<HowItWorks userData={userData} />}></Route>
             <Route path="/partners" element={<Partners></Partners>}></Route>
             <Route path="/register/video" element={<VideoOne />}></Route>
+            <Route path="/register/birthdayvalidation" element={<BirthdayValidation />}></Route>
             <Route path="/register/form" element={<Form setUserData={setData} setValid={setValid}/>}></Route>
             <Route path="/register/questionnaire" element={<Questionnaire setCollection={setCollection} valid={valid} postUserData={postUserData}/>}></Route>
             <Route path="/testimonials" element={<Testimonials userData={userData} />}></Route>
