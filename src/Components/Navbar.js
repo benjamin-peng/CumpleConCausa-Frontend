@@ -11,7 +11,7 @@ const Navbar = () => {
                 <Link to="/about">About Us</Link>
                 <Link to="/howitworks">How It Works</Link>
                 <Link to="/partners">Our Partners</Link>
-                <Link to="/register/video">Find My NGO</Link>
+                <Link to="/register/form">Find My NGO</Link>
             </div>
             </nav>
         </NavbarStyle>

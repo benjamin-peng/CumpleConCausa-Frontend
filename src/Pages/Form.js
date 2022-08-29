@@ -67,7 +67,7 @@ const Form = ({setUserData, setValid}) => {
         <FormStyled>
             <Navbar></Navbar>
             <div className="form">
-                <h3>Interested? Good!</h3>
+                <h3>Interested in finding an NGO for your Comple Con Causa?</h3>
                 <p>First, leave us some information to create your file:</p>
                 <form>
                     <label>First Name</label>
