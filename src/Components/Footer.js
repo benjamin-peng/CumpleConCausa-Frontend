@@ -10,7 +10,7 @@ function Footer() {
             {/* NEED TO ADD IN PROPER LINKS */}
             <FooterLinkStyled to='/FAQs'>FAQs</FooterLinkStyled>
             <FooterLinkStyled to='/contactus'>Contact Info</FooterLinkStyled>
-            <FooterLinkStyled to='/testimonials'>Testimonials</FooterLinkStyled>
+            {/* <FooterLinkStyled to='/testimonials'>Testimonials</FooterLinkStyled> */}
             <FooterLinkStyled to='/about'>About Us</FooterLinkStyled>
             <FooterLinkStyled to='/howitworks'>How It Works</FooterLinkStyled>
             <FooterLinkStyled to='/register/video'>Get Started</FooterLinkStyled>

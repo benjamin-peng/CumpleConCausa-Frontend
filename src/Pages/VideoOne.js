@@ -23,7 +23,7 @@ const VideoOne = () => {
                 </div>
                 <div className="nextButton">
                     <NextButton handleClick={() => {
-                        navigate('/register/form');
+                        navigate('/register/birthdayvalidation');
                     }}></NextButton>
                 </div>
             </div>
