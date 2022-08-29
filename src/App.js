@@ -16,17 +16,24 @@ import HowItWorks from './Pages/HowItWorks';
 import Testimonials from './Pages/Testimonials';
 import ContactUs from './Pages/ContactUs';
 import BirthdayValidation from './Pages/BirthdayValidation';
+import FormForNGO from './Pages/FormForNGO';
+import FormForNGOEndpage from './Pages/FormForNGOEndpage';
 
 function App() {
 
   const [valid, setValid] = useState(false); //true only when user data form has been filled out
   const [userData, setUserData] = useState({});
   const [charityCollection, setCharityCollection] = useState([]);
+  const [ngoData, setngoData] = useState({});
   //TODO:: make this an env variable
   const endpoint = 'https://cumple-con-causa-api.herokuapp.com/api/auth/register'; //replace w endpoint for server
 
   const setData = (d) => {
     setUserData(d);
+  };
+
+  const setOrgData = (d) => {
+    setngoData(d);
   };
 
   const setCharity = (c) => {
@@ -71,7 +78,9 @@ function App() {
             <Route path="/testimonials" element={<Testimonials userData={userData} />}></Route>
             <Route path="/register/done" element={<Endpage charityCollection={charityCollection} setCharity={setCharity} />}></Route>
             <Route path="/FAQs" element={<FAQs />}></Route>
-            <Route path ="/contactus" element={<ContactUs/>}></Route>
+            <Route path ="/contactus" element={<ContactUs />}></Route>
+            <Route path="/formforngo" element={<FormForNGO setngoData={setOrgData}/>}></Route>
+            <Route path="/formforngo/endpage" element={<FormForNGOEndpage />}></Route>
           </Routes>
         </div>
       </div>
