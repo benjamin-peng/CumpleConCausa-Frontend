@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar';
 import AboutStyled from '../Styles/About.styled';
 import LinkButton from '../Components/LinkButton';
 import Bottom from '../Components/Bottom';
+import partners from '../Images/Partners.png'
 
 const About = () => {
     return (
@@ -29,7 +30,7 @@ const About = () => {
                 </div>
                 <div className="horizontal">
                     <div className="vertical">
-                        <img src={person} width = '400' height = '400' alt="person" />
+                        <img src={partners} width = '650' height = '380'  />
                     </div>
                     <div className="vertical text">
                         <h2 className="caption">Our Partners</h2>
