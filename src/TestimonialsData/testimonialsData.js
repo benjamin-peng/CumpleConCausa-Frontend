@@ -18,11 +18,12 @@ const people = [
     },
     {
       id: 3,
-      image: require('../Images/Person1.jpeg'),
-      name: "Eric Rodríguez",
+      image: require('../Images/Slob.jpg'),
+      name: "Slob Kebab",
     //  title: "Volunteer",
+    // quote need to be update
       quote:
-      "Me sorprendió mucho cómo hay tantas personas que me apoyaron. Sí tenía una corazonada de que alcanzaría la meta, pero jamás pensé lograrlo en tan poco tiempo. Estoy muy feliz también porque independientemente de que pude recoger el dinero para la esterilización de 32 gatitos, pude darme cuenta de que aún existen personas que se preocupan por los demás y ayudan sin recibir nada a cambio",
+      "Me sorprendió mucho cómo hay tantas personas que me apoyaron. Sí tenía una corazonada de que alcanzaría la meta, pero jamás pensé lograrlo en tan poco tiempo. pude darme cuenta de que aún existen personas que se preocupan por los demás y ayudan sin recibir nada a cambio",
     },
     {
       id: 4,
@@ -33,7 +34,7 @@ const people = [
        "Me impacto mucho que la gente quiso donar más de lo que yo esperé. La gente se unió conmigo para cumplir un sueño tanto mío como de muchos niños que están en necesidad de aprender y de bajos recursos. Esto siento que nos unió como comunidad y lo haría de nuevo sin pensarlo dos veces",
     },
 
-    {
+/*    {
       id: 5,
       image: require('../Images/Person1.jpeg'),
       name: "Karla Castrellon",
@@ -41,7 +42,7 @@ const people = [
       quote:
       "De los momentos más lindos fue cuando los niños mientras esperaban su desayuno me cantaran cumpleaños, se me salieron las lágrimas y solo agradecí a Dios por permitirme hacer este cumple con causa, sin duda me sentí muy muy agradecida con todo lo que me rodea, aun lo recuerdo y me conmuevo, solo gracias.",
     },
-
+*/
     {
       id: 6,
       image: require('../Images/Pri.jpg'),
