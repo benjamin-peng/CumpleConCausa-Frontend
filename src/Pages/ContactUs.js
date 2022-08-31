@@ -8,20 +8,23 @@ const ContactUs = () => {
         <ContactUsStyled>
             <Navbar></Navbar>
             <div className="vertical">
-                <h1>Contact Us</h1>
+                <h1>Contacta con nosotros</h1> {/*Contact Us*/}
                 <div className="horizontal">
                     <div className="textbox">
-                        <h2>vagaw</h2>
-                        <h3>awkjvgbawkj awhguoiawhgouiawg uaighawoughawou</h3>
+                        <h2>Correo</h2>
+                        <h3>micumpleconcausa@gmail.com</h3>
                     </div>
+                    
                     <div className="textbox">
-                        <h2>gwagaw</h2>
-                        <h3>ahegkuawhguwhgow akuwgawuoghabwugk uaghauwoghawoughaw</h3>
+                        <h2>Instagram</h2>
+                        <h3>@cumpleconcausa</h3>
                     </div>
+                    {/*
                     <div className="textbox">
                         <h2>sagewg</h2>
                         <h3>ajwbgkuawbgkuawg wagkubawuogbawguakw</h3>
                     </div>
+                    */}
                 </div>
             </div>
             <div className="footer">

@@ -17,7 +17,8 @@ const Home = () => {
     return (
         <HomeStyled>
             <Navbar></Navbar>
-            <h2 id="welcome">Welcome to Cumple Con Causa!</h2>
+            <h2 id="welcome">Bienvenidos a Cumple Con Causa!</h2>
+            {/*Welcome to Cumple Con Causa */}
             <HomePageInfoBox picture={cupcake}
             header="DEMO VIDEO"
             text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
@@ -26,24 +27,40 @@ const Home = () => {
             header="Our Vision & Mission"
             text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
             />
+            {/**/}
             <br></br>
             <div className='donationBox'>
-                <h1 className='donationText'>Donate to CCC! Buy a Hat!</h1>
+                <h1 className='donationText'>¡Dona a CCC! ¡Compre un sombrero!</h1>
+                {/*¡Dona a CCC! ¡Compre un sombrero!*/}
                 <br></br>
                 {/* NEED LINK FOR BUCKET HATS */}
                 <a href="https://google.com">
-                    <button className='donateButton'>Support CCC</button>
+                    <button className='donateButton'>Apoyo CCC</button> 
+                    {/*Support CCC */}
                 </a>
             </div>
             <br></br>
             <HomePageInfoBox picture={history}
-            header="History"
-            text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+            header="Historia"
+            text="A nuestra fundadora, Mona, siempre le fascinó ser voluntaria y retribuir a la comunidad. Desde muy joven, todos los años, vio su cumpleaños como una oportunidad para hacer algo bueno y ser voluntaria. Decidió lanzar un piloto contactando a las personas interesadas en su idea a través de Instagram.
+            El año pasado se celebraron más de 50 Cumple Con Causas durante la fase piloto. ¡Tenemos la ambición de escalar esta plataforma para permitir que todos hagan el bien en sus cumpleaños!"
             />
+            {/*Our founder Mona was always fascinated in volunteering and giving back to the community. From a very young age, every year, she saw her birthday as an opportunity to do some good and volunteer. She decided to launch a pilot, by reaching out to people who are interested in her idea through Instagram.
+            Last year over 50 Cumple Con Causas were celebrated during the pilot phase. We have the ambition to scale this platform to enable everyone to do good on their birthdays!
+            */}
             <HomePageInfoBox picture={CCC}
-            header="Impact & Reach"
-            text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+            header="Impacto & alcance"
+            text="Total Cumple Con Causas celebradas: 50+
+            ONG asociadas: más de 30
+            Fondos recaudados: $50K +
+            Horas acumuladas de voluntariado: más de 500 horas
+            Apariciones en medios: 10+"
             />
+             {/* Total Cumple Con Causas celebrated:  50+
+                NGO partners : 30+
+                Funds raised: $50K +
+                Cumulated Hours of volunteering: 500+ hours
+                Media apparencies: 10+ */}
             <Slider></Slider>
             <Footer></Footer>
             <Bottom></Bottom>

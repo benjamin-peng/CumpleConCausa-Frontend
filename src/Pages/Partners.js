@@ -39,9 +39,10 @@ const Partners = () => {
     return (
         <PartnerStyled>
             <Navbar></Navbar>
-            <h2 id="top">Our partners make us who we are.</h2>
+            <h2 id="top">Nuestros socios nos hacen quienes somos.</h2> 
+                {/* Our partners make us who we are */}
             <div id="banner" onClick={flipShow}>
-                <p id="banner-caption">OUR PARTNERS</p>
+                <p id="banner-caption">NUESTROS COMPAÑEROS</p> {/* Our partners*/}
             </div>
             <div className="partner-row">
             <SidePanel show={show} file={file} name={name} changeShow={changeShow}></SidePanel>
