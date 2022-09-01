@@ -17,7 +17,8 @@ const HowItWorks = () => {
                 <div className='textBox'>
                     <h2>Step 1</h2>
                     <h1>Register Your Email Address</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                   {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    */}
                 </div>
                 <div className='photoBox'>
                     <img src={cupcake}></img>
@@ -28,8 +29,9 @@ const HowItWorks = () => {
                 <div className='textBox'>
                     <h2>Step 2</h2>
                     <h1>Take A Quiz</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-                </div>
+                    {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    */}                
+                    </div>
                 <div className='photoBox'>
                     <img src={hbd}></img>
                 </div>
@@ -39,8 +41,9 @@ const HowItWorks = () => {
                 <div className='textBox'>
                     <h2>Step 3</h2>
                     <h1>Get Your Personalized Connections</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-                </div>
+                    {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    */}                
+                    </div>
                 <div className='photoBox'>
                     <img src={cupcake}></img>
                 </div>
@@ -50,8 +53,9 @@ const HowItWorks = () => {
                 <div className='textBox'>
                     <h2>Step 4</h2>
                     <h1>Choose Your NGO</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-                    <div className='linkButton'>
+                    {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    */}                   
+                     <div className='linkButton'>
                     <FooterLinkStyled to='/register/video'>
                         <LinkButton text="Get Started">
                         </LinkButton>

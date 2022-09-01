@@ -24,9 +24,13 @@ const Home = () => {
             text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
             />
             <HomePageInfoBox picture={mission}
-            header="Our Vision & Mission"
-            text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
-            />
+            header="VISIÓN & Misión"
+            text="
+            VISIÓN:
+            Que todas las personas consideren mejorar la sociedad redirigiendo la atención y la intención de sus cumpleaños hacia una causa social.
+            Misión:
+            Enseñarle a las personas a utilizar sus cumpleaños como una herramienta de gestión y cambio social positivo."
+           />
             {/**/}
             <br></br>
             <div className='donationBox'>
@@ -34,7 +38,7 @@ const Home = () => {
                 {/*¡Dona a CCC! ¡Compre un sombrero!*/}
                 <br></br>
                 {/* NEED LINK FOR BUCKET HATS */}
-                <a href="https://google.com">
+                <a href="https://forms.gle/6FwHhKEAEiWtzh4R6">
                     <button className='donateButton'>Apoyo CCC</button> 
                     {/*Support CCC */}
                 </a>

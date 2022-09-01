@@ -14,7 +14,7 @@ height: 100vh;
 }
 .horizontal{
     margin-top: 4rem;
-    display: flex;
+    display: block;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;

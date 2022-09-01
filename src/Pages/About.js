@@ -22,8 +22,9 @@ const About = () => {
             <div className="subinfo">
                 <div className="horizontal">
                     <div className="vertical text">
-                        <h2 className="caption">Nuestra fundadora</h2> {/*Our Founder */}
-                        <p>Socióloga, Licenciada en Dimensiones Humanas Organizacionales, Especialista en Emprendimiento Social y Manejo de ONGs, Consultora de Desarrollo Social y principalmente, amante del impacto social.</p>
+                        <h2 className="caption">Nuestra fundadora: Monique</h2> {/*Our Founder */}
+                        <p>Monique es una joven de 24 años amante del impacto social. En mayo del 2020, se graduó de la Universidad de Texas en Austin con los títulos: Sociología y Dimensiones Humanas Organizacionales. También, completó un diplomado en Emprendimiento Social y Manejo de ONG’s.
+                            Recientemente, trabajó como Asesora del Despacho Superior en el Ministerio de Desarrollo Social (MIDES) del Gobierno Nacional de la República de Panamá y como Consultora de Genero en el Banco Interamericano de Desarrollo. En la actualidad, Monique promueve la importancia del impacto social juvenil a través de sus redes sociales, forma parte de la Junta Directiva de la organización Ni Uno Mas, es Coordinadora Nacional de Voluntariado en la Coalición VAMOS y trabaja como gestora de recaudación en el Museo de Arte Contemporáneo de Panamá.</p>
                         {/*Socióloga, Licenciada en Dimensiones Humanas Organizacionales, Especialista en Emprendimiento Social y Manejo de ONGs, Consultora de Desarrollo Social y principalmente, amante del impacto social.*/}
                     </div>
                     <div className="vertical">

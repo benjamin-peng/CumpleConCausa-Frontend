@@ -19,12 +19,16 @@ const ContactUs = () => {
                         <h2>Instagram</h2>
                         <h3>@cumpleconcausa</h3>
                     </div>
-                    {/*
+
                     <div className="textbox">
-                        <h2>sagewg</h2>
-                        <h3>ajwbgkuawbgkuawg wagkubawuogbawguakw</h3>
+                        <h2>Twitter</h2>
+                        <h3>@moniqueamadoq</h3>
                     </div>
-                    */}
+                    <div className="textbox">
+                        <h2>Linkedin</h2>
+                        <h3>Monique Amado Quelquejeu </h3>
+                    </div>
+                 
                 </div>
             </div>
             <div className="footer">
